@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PhysicianTableViewController: UITableViewController {
+    let locationManager = CLLocationManager()
+    var currentLat: Double = 0
+    var currentLong: Double = 0
+    var currentRadius: Int = 40000
+    
+    
     @IBOutlet weak var physicianSearchBar: UISearchBar!
+    @IBOutlet weak var distanceSegmentedController: UISegmentedControl!
     
     
     var businesses: [Businesses] = [] {
@@ -19,14 +27,43 @@ class PhysicianTableViewController: UITableViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         physicianSearchBar.delegate = self
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        locationManager.requestWhenInUseAuthorization()
+        getLocation()
+    }
+    
+    @IBAction func distanceSCTapped(_ sender: UISegmentedControl) {
+        if distanceSegmentedController.selectedSegmentIndex == 0 {
+            currentRadius = 8047
+        } else if distanceSegmentedController.selectedSegmentIndex == 1 {
+            currentRadius = 16093
+        } else if distanceSegmentedController.selectedSegmentIndex == 2 {
+            currentRadius = 24140
+        } else if distanceSegmentedController.selectedSegmentIndex == 3 {
+            currentRadius = 32186
+        } else if distanceSegmentedController.selectedSegmentIndex == 4 {
+            currentRadius = 40000
+        }
+        
+    }
+    
+    func getPhysicianSearch() {
+        guard let searchText = physicianSearchBar.text else {return}
+        if searchText != "" {
+            currentLat = 0
+            currentLong = 0
+            PhysicianController.sharedPhysician.buildQueryLink(with: searchText, lat: currentLat, long: currentLong, radius: currentRadius) { (results) in
+                self.businesses = results
+            }
+        } else if searchText == "" {
+            PhysicianController.sharedPhysician.buildQueryLink(with: searchText, lat: currentLat, long: currentLong, radius: currentRadius) { (results) in
+                self.businesses = results
+            }
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -49,7 +86,6 @@ class PhysicianTableViewController: UITableViewController {
 
 
 
-
     /*
     // MARK: - Navigation
 
@@ -63,7 +99,24 @@ class PhysicianTableViewController: UITableViewController {
 }
 
 extension PhysicianTableViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //PhysicianController.sharedPhysician.buildQueryLink(with: searchText.lowercased(), lat: 0, long: 0, radius: <#T##Int#>, completion: <#T##([Businesses]) -> Void#>)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        getPhysicianSearch()
+    }
+}
+
+extension PhysicianTableViewController: CLLocationManagerDelegate {
+    func getLocation() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {return}
+        print("lat: \(locValue.latitude), long: \(locValue.longitude)")
+        self.currentLat = locValue.latitude
+        self.currentLong = locValue.longitude
     }
 }

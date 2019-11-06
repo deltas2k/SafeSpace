@@ -10,7 +10,6 @@ import Foundation
 
 struct PhysicianQuery: Decodable {
     let businesses: [Businesses]
-    
 }
 
 struct Businesses: Decodable {
@@ -23,7 +22,6 @@ struct Businesses: Decodable {
     let display_phone: String
     let location: Location
     let coordinates: Coordinates
-    
 }
 
 struct Location: Decodable {

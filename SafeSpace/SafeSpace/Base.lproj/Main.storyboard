@@ -185,15 +185,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-rz-585">
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="4" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-rz-585">
                                     <rect key="frame" x="0.0" y="56" width="375" height="32"/>
                                     <segments>
-                                        <segment title="First"/>
-                                        <segment title="Second"/>
-                                        <segment title=""/>
-                                        <segment title=""/>
-                                        <segment title=""/>
+                                        <segment title="5mi"/>
+                                        <segment title="10mi"/>
+                                        <segment title="15mi"/>
+                                        <segment title="20mi"/>
+                                        <segment title="25mi"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="distanceSCTapped:" destination="vqF-7h-1am" eventType="valueChanged" id="jIn-BZ-biW"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -225,7 +228,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mxr-e8-K7x" kind="show" id="kje-Cw-dsA"/>
+                                    <segue destination="mxr-e8-K7x" kind="show" identifier="toDestinationVC" id="kje-Cw-dsA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -238,6 +241,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="distanceSegmentedController" destination="hF3-rz-585" id="jxc-vd-xI0"/>
                         <outlet property="physicianSearchBar" destination="87a-EJ-47x" id="y3D-Kx-NIv"/>
                     </connections>
                 </tableViewController>
