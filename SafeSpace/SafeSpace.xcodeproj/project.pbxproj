@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340DABCD237321A8009342C9 /* PhysicianLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340DABCC237321A8009342C9 /* PhysicianLookup.swift */; };
+		340DABCF237321EE009342C9 /* PhysicianController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340DABCE237321EE009342C9 /* PhysicianController.swift */; };
 		342452082366155C007D4DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342452072366155C007D4DCA /* AppDelegate.swift */; };
 		3424520A2366155C007D4DCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342452092366155C007D4DCA /* SceneDelegate.swift */; };
-		3424520C2366155C007D4DCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3424520B2366155C007D4DCA /* ViewController.swift */; };
 		3424520F2366155C007D4DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3424520D2366155C007D4DCA /* Main.storyboard */; };
 		342452112366155D007D4DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342452102366155D007D4DCA /* Assets.xcassets */; };
 		342452142366155D007D4DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342452122366155D007D4DCA /* LaunchScreen.storyboard */; };
+		34A297032370B8B2007AFC62 /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A297022370B8B2007AFC62 /* SOSViewController.swift */; };
+		34A297062370D543007AFC62 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A297052370D543007AFC62 /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		340DABCC237321A8009342C9 /* PhysicianLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianLookup.swift; sourceTree = "<group>"; };
+		340DABCE237321EE009342C9 /* PhysicianController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianController.swift; sourceTree = "<group>"; };
 		342452042366155C007D4DCA /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342452072366155C007D4DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		342452092366155C007D4DCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3424520B2366155C007D4DCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3424520E2366155C007D4DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		342452102366155D007D4DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		342452132366155D007D4DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		342452152366155D007D4DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34A297022370B8B2007AFC62 /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
+		34A297052370D543007AFC62 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		342452062366155C007D4DCA /* SafeSpace */ = {
 			isa = PBXGroup;
 			children = (
+				34A297042370D404007AFC62 /* helperFiles */,
+				3424521D23661C1B007D4DCA /* controllers */,
+				3424521C23661C10007D4DCA /* models */,
+				3424521B236616A6007D4DCA /* resources */,
+				3424520D2366155C007D4DCA /* Main.storyboard */,
+			);
+			path = SafeSpace;
+			sourceTree = "<group>";
+		};
+		3424521B236616A6007D4DCA /* resources */ = {
+			isa = PBXGroup;
+			children = (
 				342452072366155C007D4DCA /* AppDelegate.swift */,
 				342452092366155C007D4DCA /* SceneDelegate.swift */,
-				3424520B2366155C007D4DCA /* ViewController.swift */,
-				3424520D2366155C007D4DCA /* Main.storyboard */,
 				342452102366155D007D4DCA /* Assets.xcassets */,
 				342452122366155D007D4DCA /* LaunchScreen.storyboard */,
 				342452152366155D007D4DCA /* Info.plist */,
 			);
-			path = SafeSpace;
+			path = resources;
+			sourceTree = "<group>";
+		};
+		3424521C23661C10007D4DCA /* models */ = {
+			isa = PBXGroup;
+			children = (
+				340DABCC237321A8009342C9 /* PhysicianLookup.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		3424521D23661C1B007D4DCA /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3424521F23661C3D007D4DCA /* viewControllers */,
+				3424521E23661C22007D4DCA /* modelControllers */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3424521E23661C22007D4DCA /* modelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				340DABCE237321EE009342C9 /* PhysicianController.swift */,
+			);
+			path = modelControllers;
+			sourceTree = "<group>";
+		};
+		3424521F23661C3D007D4DCA /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				34A297022370B8B2007AFC62 /* SOSViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		34A297042370D404007AFC62 /* helperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				34A297052370D543007AFC62 /* constants.swift */,
+			);
+			path = helperFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3424520C2366155C007D4DCA /* ViewController.swift in Sources */,
+				340DABCF237321EE009342C9 /* PhysicianController.swift in Sources */,
 				342452082366155C007D4DCA /* AppDelegate.swift in Sources */,
+				340DABCD237321A8009342C9 /* PhysicianLookup.swift in Sources */,
+				34A297032370B8B2007AFC62 /* SOSViewController.swift in Sources */,
+				34A297062370D543007AFC62 /* constants.swift in Sources */,
 				3424520A2366155C007D4DCA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RRGZ3XLFVN;
-				INFOPLIST_FILE = SafeSpace/Info.plist;
+				INFOPLIST_FILE = SafeSpace/resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RRGZ3XLFVN;
-				INFOPLIST_FILE = SafeSpace/Info.plist;
+				INFOPLIST_FILE = SafeSpace/resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

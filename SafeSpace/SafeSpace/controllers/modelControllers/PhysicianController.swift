@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import CoreLocation
+
+class PhysicianController {
+    let baseURL = URL(string: DoctorConstants.baseURL)
+    
+}

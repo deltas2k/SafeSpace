@@ -15,16 +15,37 @@ class SOSViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func policeButtonTapped(_ sender: Any) {
+        makePhoneCall(phoneNumber: "911")
     }
-    */
+    @IBAction func lifelineButtonTapped(_ sender: Any) {
+        makePhoneCall(phoneNumber: "18002738255")
+    }
+    @IBAction func SAMHSAHotlineButtonTapped(_ sender: Any) {
+        makePhoneCall(phoneNumber: "18006622357")
+    }
+    @IBAction func disasterButtonTapped(_ sender: Any) {
+        makePhoneCall(phoneNumber: "18009855990")
+    }
+    @IBAction func veteransButtonTapped(_ sender: Any) {
+        makePhoneCall(phoneNumber: "18002738255")
+    }
+    @IBAction func TTYButtonTapped(_ sender: Any) {
+        makePhoneCall(phoneNumber: "18004874889")
+    }
+    
+    func makePhoneCall(phoneNumber: String) {
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+
+            let alert = UIAlertController(title: ("Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+                UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+            }))
+
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+        
 
 }
