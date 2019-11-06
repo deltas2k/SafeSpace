@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        PhysicianController.sharedPhysician.buildQueryLink(with: "", lat: 40.365462, long:  -111.758381, radius: 4000) { (physicians) in
+            print("success")
+        }
         return true
     }
 
