@@ -21,8 +21,10 @@ class PhysicianController {
         
         let queryCategory = URLQueryItem(name: DoctorConstants.specialtyQueryKey, value: DoctorConstants.specialtyQueryValue)
         let queryRadius = URLQueryItem(name: DoctorConstants.radiusQueryKey, value: "\(radius)")
+        let queryLimit = URLQueryItem(name: DoctorConstants.limitQueryKey, value: DoctorConstants.limitQueryValue)
+        let querySortby = URLQueryItem(name: DoctorConstants.sortbyQueryKey, value: DoctorConstants.sortbyQueryValue)
         
-        componentURL?.queryItems = [queryCategory, queryRadius]
+        componentURL?.queryItems = [queryCategory, queryRadius, queryLimit, querySortby]
         
         if searchText != "" {
             let queryLocation = URLQueryItem(name: DoctorConstants.locationQueryKey, value: searchText)
@@ -57,5 +59,25 @@ class PhysicianController {
         .resume()
 
     }
+    
+    static func getImage(image: Businesses, completion: @escaping (UIImage) -> Void) {
+        guard let url = image.image_url else {return}
+        guard let finalURL = URL(string: url) else {return}
+        print(finalURL)
+        
+        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                return
+            }
+            if let data = data {
+                guard let image = UIImage(data: data) else {return}
+                completion(image)
+                    }
+                }
+            .resume()
+        
+    }
+    
 
 }

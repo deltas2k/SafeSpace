@@ -30,5 +30,9 @@ struct DoctorConstants {
     static let locationQueryKey = "location"
     static let apiHeaderKey = "Authorization"
     static let apiHeaderValue = "Bearer Is4MxdjB5xyV2U4jrnk737ETNec4KxUUV36ovgowIO3RfVOv9k092xCQ6Bgz4zRURsqAE2i1ptv_RTsthBMNomWnJ_mmLSvTHjb9FxPbzyhl5gpwdXXcUAA8CArDXXYx"
+    static let limitQueryKey = "limit"
+    static let limitQueryValue = "50"
+    static let sortbyQueryKey = "sort_by"
+    static let sortbyQueryValue = "distance"
     
 }

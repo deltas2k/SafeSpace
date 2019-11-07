@@ -33,6 +33,7 @@ class PhysicianTableViewController: UITableViewController {
         physicianSearchBar.delegate = self
         locationManager.requestWhenInUseAuthorization()
         getLocation()
+        tableView.rowHeight = 120
     }
     
     @IBAction func distanceSCTapped(_ sender: UISegmentedControl) {
@@ -47,7 +48,7 @@ class PhysicianTableViewController: UITableViewController {
         } else if distanceSegmentedController.selectedSegmentIndex == 4 {
             currentRadius = 40000
         }
-        
+        getPhysicianSearch()
     }
     
     func getPhysicianSearch() {
@@ -59,6 +60,8 @@ class PhysicianTableViewController: UITableViewController {
                 self.businesses = results
             }
         } else if searchText == "" {
+            currentLat = locationManager.location?.coordinate.latitude ?? 0
+            currentLong = locationManager.location?.coordinate.longitude ?? 0
             PhysicianController.sharedPhysician.buildQueryLink(with: searchText, lat: currentLat, long: currentLong, radius: currentRadius) { (results) in
                 self.businesses = results
             }
@@ -76,10 +79,11 @@ class PhysicianTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "physicianCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "physicianCell", for: indexPath) as! PhysicianTableViewCell
 
         let business = businesses[indexPath.row]
-        cell.textLabel?.text = business.name
+        cell.physicians = business
+        // cell.textLabel?.text = business.name
 
         return cell
     }

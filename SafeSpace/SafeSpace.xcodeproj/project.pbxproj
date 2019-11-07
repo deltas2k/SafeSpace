@@ -10,6 +10,7 @@
 		340DABCD237321A8009342C9 /* PhysicianLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340DABCC237321A8009342C9 /* PhysicianLookup.swift */; };
 		340DABCF237321EE009342C9 /* PhysicianController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340DABCE237321EE009342C9 /* PhysicianController.swift */; };
 		340DABD123736381009342C9 /* PhysicianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340DABD023736381009342C9 /* PhysicianTableViewController.swift */; };
+		340DABD323738AE7009342C9 /* PhysicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340DABD223738AE7009342C9 /* PhysicianTableViewCell.swift */; };
 		342452082366155C007D4DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342452072366155C007D4DCA /* AppDelegate.swift */; };
 		3424520A2366155C007D4DCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342452092366155C007D4DCA /* SceneDelegate.swift */; };
 		3424520F2366155C007D4DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3424520D2366155C007D4DCA /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		340DABCC237321A8009342C9 /* PhysicianLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianLookup.swift; sourceTree = "<group>"; };
 		340DABCE237321EE009342C9 /* PhysicianController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianController.swift; sourceTree = "<group>"; };
 		340DABD023736381009342C9 /* PhysicianTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianTableViewController.swift; sourceTree = "<group>"; };
+		340DABD223738AE7009342C9 /* PhysicianTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianTableViewCell.swift; sourceTree = "<group>"; };
 		342452042366155C007D4DCA /* SafeSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		342452072366155C007D4DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		342452092366155C007D4DCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				34A297022370B8B2007AFC62 /* SOSViewController.swift */,
 				340DABD023736381009342C9 /* PhysicianTableViewController.swift */,
+				340DABD223738AE7009342C9 /* PhysicianTableViewCell.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				340DABCF237321EE009342C9 /* PhysicianController.swift in Sources */,
 				340DABD123736381009342C9 /* PhysicianTableViewController.swift in Sources */,
+				340DABD323738AE7009342C9 /* PhysicianTableViewCell.swift in Sources */,
 				342452082366155C007D4DCA /* AppDelegate.swift in Sources */,
 				340DABCD237321A8009342C9 /* PhysicianLookup.swift in Sources */,
 				34A297032370B8B2007AFC62 /* SOSViewController.swift in Sources */,
