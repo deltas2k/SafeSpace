@@ -33,6 +33,6 @@ struct DoctorConstants {
     static let limitQueryKey = "limit"
     static let limitQueryValue = "50"
     static let sortbyQueryKey = "sort_by"
-    static let sortbyQueryValue = "distance"
+    static let sortbyQueryValue = "best_match"
     
 }
