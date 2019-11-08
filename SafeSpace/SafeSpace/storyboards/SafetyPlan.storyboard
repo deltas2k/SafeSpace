@@ -235,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcg-Xe-0q4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="1308"/>
+            <point key="canvasLocation" x="1780" y="1015"/>
         </scene>
         <!--Places To Go-->
         <scene sceneID="Ya3-0w-H2B">
@@ -266,7 +266,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODW-Fe-OPr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3210" y="2017"/>
+            <point key="canvasLocation" x="2512" y="1015"/>
         </scene>
         <!--Recognize Warning Signs-->
         <scene sceneID="cKl-mv-ag8">
@@ -328,7 +328,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIo-dd-0Cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="-754"/>
+            <point key="canvasLocation" x="2513" y="-433"/>
         </scene>
         <!--Diagnosis-->
         <scene sceneID="8dh-eq-vur">
@@ -359,7 +359,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmo-hz-Vx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="-1461"/>
+            <point key="canvasLocation" x="1781" y="-433"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mqA-Dd-Gdp">

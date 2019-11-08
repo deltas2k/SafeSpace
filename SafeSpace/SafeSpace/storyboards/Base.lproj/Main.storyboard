@@ -363,16 +363,16 @@
             </objects>
             <point key="canvasLocation" x="-407" y="-65"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Journal-->
         <scene sceneID="9pc-db-am4">
             <objects>
-                <tableViewController id="bQU-Py-daZ" sceneMemberID="viewController">
+                <tableViewController id="bQU-Py-daZ" customClass="EntryListTableViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uON-sw-JvK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1xL-uR-IeU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" id="1xL-uR-IeU">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1xL-uR-IeU" id="ayh-3W-UtU">
@@ -380,7 +380,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Y0p-SM-ayc" kind="show" id="rof-zW-8ln"/>
+                                    <segue destination="Y0p-SM-ayc" kind="show" identifier="toDetailVC" id="rof-zW-8ln"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -389,7 +389,7 @@
                             <outlet property="delegate" destination="bQU-Py-daZ" id="tDX-ZN-JGT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aiT-cu-7yk">
+                    <navigationItem key="navigationItem" title="My Journal" id="aiT-cu-7yk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="886-mx-0nH">
                             <connections>
                                 <segue destination="Y0p-SM-ayc" kind="show" id="LwF-Wy-MA4"/>
@@ -401,21 +401,57 @@
             </objects>
             <point key="canvasLocation" x="1437.68115942029" y="-1125"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail View Controller-->
         <scene sceneID="RAw-Up-TB0">
             <objects>
-                <viewController id="Y0p-SM-ayc" sceneMemberID="viewController">
+                <viewController id="Y0p-SM-ayc" customClass="EntryDetailViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gsd-EY-lmq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTM-XT-7z0">
+                                <rect key="frame" x="16" y="132" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Uf-ny-hQn">
+                                <rect key="frame" x="16" y="196" width="343" height="441"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Dly-a3-Zsh"/>
+                                    <constraint firstAttribute="height" constant="441" id="csd-YO-box"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Jc-2A-9yn" firstAttribute="trailing" secondItem="6Uf-ny-hQn" secondAttribute="trailing" constant="16" id="GAY-Oa-NU2"/>
+                            <constraint firstItem="6Uf-ny-hQn" firstAttribute="top" secondItem="mTM-XT-7z0" secondAttribute="bottom" constant="30" id="LPd-Tb-BCe"/>
+                            <constraint firstItem="1Jc-2A-9yn" firstAttribute="trailing" secondItem="mTM-XT-7z0" secondAttribute="trailing" constant="16" id="eHD-Gx-4Jb"/>
+                            <constraint firstItem="6Uf-ny-hQn" firstAttribute="leading" secondItem="1Jc-2A-9yn" secondAttribute="leading" constant="16" id="xEg-Bc-c5r"/>
+                            <constraint firstItem="mTM-XT-7z0" firstAttribute="leading" secondItem="1Jc-2A-9yn" secondAttribute="leading" constant="16" id="xkb-rd-FXA"/>
+                            <constraint firstItem="mTM-XT-7z0" firstAttribute="top" secondItem="1Jc-2A-9yn" secondAttribute="top" constant="44" id="xpc-dQ-WHw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Jc-2A-9yn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iVd-WZ-OrU"/>
+                    <navigationItem key="navigationItem" id="iVd-WZ-OrU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JqZ-P1-hCS">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Y0p-SM-ayc" id="AKU-sl-UHa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="6Uf-ny-hQn" id="i6G-x5-ObH"/>
+                        <outlet property="titleTextField" destination="mTM-XT-7z0" id="YZD-Is-ndQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLG-gJ-4Ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351" y="-1125"/>
+            <point key="canvasLocation" x="2349.5999999999999" y="-1125.3694581280788"/>
         </scene>
         <!--Physician Lookup-->
         <scene sceneID="MI8-2N-xbs">
