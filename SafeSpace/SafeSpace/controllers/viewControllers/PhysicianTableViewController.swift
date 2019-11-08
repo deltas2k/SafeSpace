@@ -93,10 +93,15 @@ class PhysicianTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-    }
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "toDestinationVC" {
+               guard let detailVC = segue.destination as? PhysicianDetailViewController,
+                let selectedRow = tableView.indexPathForSelectedRow else {return}
+            let business = businesses[selectedRow.row]
+                detailVC.businesses = business
+               
+           }
+       }
     
 
 }

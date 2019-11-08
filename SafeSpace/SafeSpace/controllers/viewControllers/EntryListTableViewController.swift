@@ -41,6 +41,7 @@ class EntryListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
         let entry = EntryController.shared.entry[indexPath.row]
         cell.textLabel?.text = entry.titleText
+        cell.detailTextLabel?.text = entry.timestamp.formatDate()
         
         return cell
     }
@@ -52,7 +53,7 @@ class EntryListTableViewController: UITableViewController {
            //make sure that the hype exists in the hypes array
         guard let index = EntryController.shared.entry.firstIndex(of: entryToDelete) else {return}
            //call our delete method to delete the hype
-           EntryController.shared.delete(entryToDelete) { (success) in
+        EntryController.shared.delete(entryToDelete) { (success) in
                //if it deletes successfully, we remove the hype from SOT and delete the row
                if success {
                 EntryController.shared.entry.remove(at: index)

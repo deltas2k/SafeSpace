@@ -17,7 +17,6 @@
 		342452112366155D007D4DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342452102366155D007D4DCA /* Assets.xcassets */; };
 		342452142366155D007D4DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342452122366155D007D4DCA /* LaunchScreen.storyboard */; };
 		345F14B2237491AB00D08C17 /* SafetyPlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F14B1237491AB00D08C17 /* SafetyPlan.storyboard */; };
-		345F14B4237499ED00D08C17 /* SafetyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14B3237499ED00D08C17 /* SafetyPlan.swift */; };
 		345F14B62374A3FE00D08C17 /* SafetyPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14B52374A3FE00D08C17 /* SafetyPlanController.swift */; };
 		345F14BA2374A46700D08C17 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F14B92374A46700D08C17 /* CloudKit.framework */; };
 		345F14BC2374B5ED00D08C17 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14BB2374B5ED00D08C17 /* Diagnosis.swift */; };
@@ -26,8 +25,14 @@
 		345F14C22374D5D900D08C17 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C12374D5D900D08C17 /* EntryListTableViewController.swift */; };
 		345F14C42374D60300D08C17 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C32374D60300D08C17 /* EntryDetailViewController.swift */; };
 		345F14C62374F34A00D08C17 /* Medications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C52374F34A00D08C17 /* Medications.swift */; };
+		345F14C82374FFCB00D08C17 /* RecognizeWarningSigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C72374FFCB00D08C17 /* RecognizeWarningSigns.swift */; };
 		34A297032370B8B2007AFC62 /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A297022370B8B2007AFC62 /* SOSViewController.swift */; };
 		34A297062370D543007AFC62 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A297052370D543007AFC62 /* constants.swift */; };
+		34EEE81A2375D85A00402084 /* Activites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEE8192375D85A00402084 /* Activites.swift */; };
+		34EEE81C2375DB3E00402084 /* Persons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEE81B2375DB3E00402084 /* Persons.swift */; };
+		34EEE81E2375DD1800402084 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEE81D2375DD1800402084 /* Places.swift */; };
+		34EEE8202375E6C500402084 /* PhysicianDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEE81F2375E6C500402084 /* PhysicianDetailViewController.swift */; };
+		34EEE8222375FD8E00402084 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEE8212375FD8E00402084 /* MapAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +48,6 @@
 		342452132366155D007D4DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		342452152366155D007D4DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		345F14B1237491AB00D08C17 /* SafetyPlan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SafetyPlan.storyboard; sourceTree = "<group>"; };
-		345F14B3237499ED00D08C17 /* SafetyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyPlan.swift; sourceTree = "<group>"; };
 		345F14B52374A3FE00D08C17 /* SafetyPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyPlanController.swift; sourceTree = "<group>"; };
 		345F14B72374A45300D08C17 /* SafeSpace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeSpace.entitlements; sourceTree = "<group>"; };
 		345F14B92374A46700D08C17 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -53,8 +57,14 @@
 		345F14C12374D5D900D08C17 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
 		345F14C32374D60300D08C17 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		345F14C52374F34A00D08C17 /* Medications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medications.swift; sourceTree = "<group>"; };
+		345F14C72374FFCB00D08C17 /* RecognizeWarningSigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeWarningSigns.swift; sourceTree = "<group>"; };
 		34A297022370B8B2007AFC62 /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
 		34A297052370D543007AFC62 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		34EEE8192375D85A00402084 /* Activites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activites.swift; sourceTree = "<group>"; };
+		34EEE81B2375DB3E00402084 /* Persons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persons.swift; sourceTree = "<group>"; };
+		34EEE81D2375DD1800402084 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		34EEE81F2375E6C500402084 /* PhysicianDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianDetailViewController.swift; sourceTree = "<group>"; };
+		34EEE8212375FD8E00402084 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +134,13 @@
 			isa = PBXGroup;
 			children = (
 				340DABCC237321A8009342C9 /* PhysicianLookup.swift */,
-				345F14B3237499ED00D08C17 /* SafetyPlan.swift */,
-				345F14BB2374B5ED00D08C17 /* Diagnosis.swift */,
 				345F14BD2374D06A00D08C17 /* Journal.swift */,
+				345F14BB2374B5ED00D08C17 /* Diagnosis.swift */,
 				345F14C52374F34A00D08C17 /* Medications.swift */,
+				345F14C72374FFCB00D08C17 /* RecognizeWarningSigns.swift */,
+				34EEE8192375D85A00402084 /* Activites.swift */,
+				34EEE81B2375DB3E00402084 /* Persons.swift */,
+				34EEE81D2375DD1800402084 /* Places.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -157,6 +170,7 @@
 				34A297022370B8B2007AFC62 /* SOSViewController.swift */,
 				340DABD023736381009342C9 /* PhysicianTableViewController.swift */,
 				340DABD223738AE7009342C9 /* PhysicianTableViewCell.swift */,
+				34EEE81F2375E6C500402084 /* PhysicianDetailViewController.swift */,
 				345F14C12374D5D900D08C17 /* EntryListTableViewController.swift */,
 				345F14C32374D60300D08C17 /* EntryDetailViewController.swift */,
 			);
@@ -175,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				34A297052370D543007AFC62 /* constants.swift */,
+				34EEE8212375FD8E00402084 /* MapAnnotation.swift */,
 			);
 			path = helperFiles;
 			sourceTree = "<group>";
@@ -253,16 +268,21 @@
 			files = (
 				340DABCF237321EE009342C9 /* PhysicianController.swift in Sources */,
 				340DABD123736381009342C9 /* PhysicianTableViewController.swift in Sources */,
+				34EEE8222375FD8E00402084 /* MapAnnotation.swift in Sources */,
 				340DABD323738AE7009342C9 /* PhysicianTableViewCell.swift in Sources */,
 				342452082366155C007D4DCA /* AppDelegate.swift in Sources */,
 				345F14B62374A3FE00D08C17 /* SafetyPlanController.swift in Sources */,
 				340DABCD237321A8009342C9 /* PhysicianLookup.swift in Sources */,
 				34A297032370B8B2007AFC62 /* SOSViewController.swift in Sources */,
 				345F14BC2374B5ED00D08C17 /* Diagnosis.swift in Sources */,
+				345F14C82374FFCB00D08C17 /* RecognizeWarningSigns.swift in Sources */,
 				345F14C02374D16E00D08C17 /* JournalController.swift in Sources */,
 				34A297062370D543007AFC62 /* constants.swift in Sources */,
 				345F14C22374D5D900D08C17 /* EntryListTableViewController.swift in Sources */,
-				345F14B4237499ED00D08C17 /* SafetyPlan.swift in Sources */,
+				34EEE8202375E6C500402084 /* PhysicianDetailViewController.swift in Sources */,
+				34EEE81C2375DB3E00402084 /* Persons.swift in Sources */,
+				34EEE81A2375D85A00402084 /* Activites.swift in Sources */,
+				34EEE81E2375DD1800402084 /* Places.swift in Sources */,
 				345F14C62374F34A00D08C17 /* Medications.swift in Sources */,
 				3424520A2366155C007D4DCA /* SceneDelegate.swift in Sources */,
 				345F14C42374D60300D08C17 /* EntryDetailViewController.swift in Sources */,

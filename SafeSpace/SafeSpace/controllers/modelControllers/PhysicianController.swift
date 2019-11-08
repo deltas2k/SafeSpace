@@ -13,6 +13,8 @@ import UIKit
 class PhysicianController {
     let baseURL = URL(string: DoctorConstants.baseURL)
     
+    var businesses: [Businesses] = []
+    
     static let sharedPhysician = PhysicianController()
     
     func buildQueryLink(with searchText: String, lat: Double, long: Double, radius: Int, completion: @escaping ([Businesses]) -> Void) {

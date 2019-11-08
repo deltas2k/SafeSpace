@@ -11,7 +11,7 @@ import CloudKit
 
 class EntryController {
     static let shared = EntryController()
-    let privateDB = CKContainer(identifier: "iCloud.deltas2k.SafeSpace").privateCloudDatabase
+    let privateDB = CKContainer.default().privateCloudDatabase
     
     
     var entry: [Entry] = []
@@ -36,7 +36,7 @@ class EntryController {
                 return
             }
             guard let record = record,
-            let savedEntry = Entry(ckRecord: record)
+                let savedEntry = Entry(ckRecord: record)
                 else { completion(false); return }
             
             self.entry.append(savedEntry)
@@ -62,13 +62,35 @@ class EntryController {
             self.entry = entries
             print ("fetch successful")
             completion(true)
-        
+            
         }
     }
     
+    func updateEntry(_ entry: Entry, completion: @escaping (_ success: Bool) -> Void) {
+        let recordToUpdate = CKRecord(entry: entry)
+        let operation = CKModifyRecordsOperation(recordsToSave: [recordToUpdate], recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.qualityOfService = .userInteractive
+        operation.modifyRecordsCompletionBlock = { records, _, error in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false); return
+            }
+            guard recordToUpdate == records?.first else {
+                print("Unexpected record was updated")
+                completion(false)
+                return
+            }
+            print("Updated \(recordToUpdate.recordID) successfully in CloudKit")
+            completion(true)
+        }
+        privateDB.add(operation)
+    }
+    
+    
     func delete(_ entry: Entry, completion: @escaping (_ success: Bool) -> Void) {
-
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [entry.ckRecordID])
+        operation.savePolicy = .changedKeys
         operation.qualityOfService = .userInitiated
         operation.modifyRecordsCompletionBlock = { _, recordIds, error in
             if let error = error {
@@ -87,4 +109,17 @@ class EntryController {
         privateDB.add(operation)
     }
     
+    func slowDelete(_ entry: Entry, completion: @escaping (Bool) -> Void) {
+        privateDB.delete(withRecordID: entry.ckRecordID) { (recordID, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(false); return
+            }
+            if recordID != nil {
+                guard let index = self.entry.firstIndex(of: entry) else {
+                    completion(false); return}
+                self.entry.remove(at: index)
+            }
+        }
+    }
 }

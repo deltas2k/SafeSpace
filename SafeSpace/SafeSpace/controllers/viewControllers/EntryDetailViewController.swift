@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -33,16 +34,13 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    
-    
-    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard let title = titleTextField.text,
             let body = bodyTextView.text
             else {return}
         
         if let entry = entry {
-            EntryController.shared.saveEntry(entry: entry) { (success) in
+            EntryController.shared.updateEntry(entry) { (success) in
                 if success {
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)
