@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import Contacts
 
 class MapAnnotation: NSObject, MKAnnotation {
     let title: String?
@@ -17,4 +18,6 @@ class MapAnnotation: NSObject, MKAnnotation {
         self.title = title
         self.coordinate = coordinate
     }
+    
+    
 }

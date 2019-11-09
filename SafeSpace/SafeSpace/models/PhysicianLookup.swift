@@ -23,6 +23,7 @@ struct Businesses: Decodable {
     let location: Location
     let coordinates: Coordinates
     let distance: Double
+    let phone: String
 }
 
 struct Location: Decodable {
@@ -31,6 +32,7 @@ struct Location: Decodable {
     let city: String
     let state: String
     let zip_code: String
+    let display_address: [String]?
 }
 
 struct Coordinates: Decodable {

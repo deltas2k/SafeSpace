@@ -49,12 +49,14 @@ class PhysicianTableViewCell: UITableViewCell {
             photoImageView.image = nil
             
            PhysicianController.getImage(image: physician) { (image) in
-//                if let image = image {
                    DispatchQueue.main.async {
                        self.photoImageView.image = image
-//                    }
                }
             }
+            
+            let distance = ((physician.distance) / 1000) / 1.609
+            let roundedDistance = round(distance * 100) / 100
+            distanceLabel.text = "\(roundedDistance) mi"
         }
     }
 }

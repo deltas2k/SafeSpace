@@ -129,3 +129,4 @@ extension PhysicianTableViewController: CLLocationManagerDelegate {
         self.currentLong = locValue.longitude
     }
 }
+
