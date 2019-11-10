@@ -32,7 +32,7 @@ extension RecognizeWS {
         guard let RWSTitle = ckRecord[RecognizeWSConstants.RWSTitleKey] as? String,
             let RWSComment = ckRecord[RecognizeWSConstants.RWSCommentKey] as? String
             else {return nil}
-        self.init(recognizeWSTitle: RWSTitle, recognizeWSComment: RWSComment)
+        self.init(recognizeWSTitle: RWSTitle, recognizeWSComment: RWSComment, ckRecordID: ckRecord.recordID)
     }
 }
 
@@ -41,5 +41,11 @@ extension CKRecord {
         self.init(recordType: RecognizeWSConstants.recordTypeKey, recordID: recognizeWS.ckRecordID)
         self.setValue(recognizeWS.recognizeWSTitle, forKey: RecognizeWSConstants.RWSTitleKey)
         self.setValue(recognizeWS.recognizeWSComment, forKey: RecognizeWSConstants.RWSCommentKey)
+    }
+}
+
+extension RecognizeWS: Equatable {
+    static func == (lhs: RecognizeWS, rhs: RecognizeWS) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
     }
 }

@@ -40,7 +40,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
             else {return}
         
         if let entry = entry {
-            EntryController.shared.updateEntry(entry) { (success) in
+            EntryController.shared.update(entry) { (success) in
                 if success {
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)
@@ -49,7 +49,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             // save new
-            EntryController.shared.addEntryWith(titleText: title, bodyText: body) { (success) in
+            EntryController.shared.saveEntry(with: title, bodyText: body) { (success) in
                 if success {
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)

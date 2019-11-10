@@ -32,7 +32,7 @@ extension Places {
         guard let placesName = ckRecord[PlacesConstant.placeNameKey] as? String,
             let placesComment = ckRecord[PlacesConstant.placeCommentKey] as? String
             else {return nil}
-        self.init(placesName: placesName, placesComment: placesComment)
+        self.init(placesName: placesName, placesComment: placesComment, ckRecordID: ckRecord.recordID)
     }
 }
 
@@ -41,5 +41,11 @@ extension CKRecord {
         self.init(recordType: PlacesConstant.recordTypeKey, recordID: places.ckRecordID)
         self.setValue(places.placesName, forKey: PlacesConstant.placeNameKey)
         self.setValue(places.placesComment, forKey: PlacesConstant.placeCommentKey)
+    }
+}
+
+extension Places: Equatable {
+    static func == (lhs: Places, rhs: Places) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
     }
 }

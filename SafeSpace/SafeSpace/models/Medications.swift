@@ -32,7 +32,7 @@ extension Medications {
         guard let medName = ckRecord[MedicationsConstants.medNameKey] as? String,
             let medDosage = ckRecord[MedicationsConstants.medDosageKey] as? String
             else {return nil}
-        self.init(medName: medName, medDosage: medDosage)
+        self.init(medName: medName, medDosage: medDosage, ckRecordID: ckRecord.recordID)
     }
 }
 
@@ -41,5 +41,11 @@ extension CKRecord {
         self.init(recordType: MedicationsConstants.recordTypeKey, recordID: medication.ckRecordID)
         self.setValue(medication.medName, forKey: MedicationsConstants.medNameKey)
         self.setValue(medication.medDosage, forKey: MedicationsConstants.medDosageKey)
+    }
+}
+
+extension Medications: Equatable {
+    static func == (lhs: Medications, rhs: Medications) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
     }
 }

@@ -19,7 +19,7 @@ struct EntryConstants {
 class Entry {
     var titleText: String
     var bodyText: String
-    let timestamp: Date
+    var timestamp: Date
     let ckRecordID: CKRecord.ID
     
     init(titleText: String, bodyText:String, timestamp: Date = Date(), ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
@@ -37,7 +37,7 @@ extension Entry {
             let bodyText = ckRecord[EntryConstants.bodyKey] as? String,
             let timestamp = ckRecord[EntryConstants.timestampKey] as? Date
             else {return nil}
-        self.init(titleText: titleText, bodyText: bodyText, timestamp: timestamp)
+        self.init(titleText: titleText, bodyText: bodyText, timestamp: timestamp, ckRecordID: ckRecord.recordID)
     }
 }
 

@@ -32,7 +32,7 @@ extension Activities {
         guard let activities = ckRecord[ActivitiesConstant.activityTitleKey] as? String,
             let activitiesComment = ckRecord[ActivitiesConstant.activityCommentKey] as? String
             else {return nil}
-        self.init(activities: activities, activitiesComment: activitiesComment)
+        self.init(activities: activities, activitiesComment: activitiesComment, ckRecordID: ckRecord.recordID)
     }
 }
 
@@ -42,4 +42,12 @@ extension CKRecord {
         self.setValue(activities.activities, forKey: ActivitiesConstant.activityTitleKey)
         self.setValue(activities.activitiesComment, forKey: ActivitiesConstant.activityCommentKey)
     }
+}
+
+extension Activities: Equatable {
+    static func == (lhs: Activities, rhs: Activities) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
+    }
+    
+    
 }

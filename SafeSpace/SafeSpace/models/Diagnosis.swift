@@ -32,7 +32,7 @@ extension Diagnosis {
         guard let diagTitle = ckRecord[DiagnosisConstants.diagTitleKey] as? String,
             let diagComment = ckRecord[DiagnosisConstants.diagCommentKey] as? String
             else {return nil}
-        self.init(diagnosisTitle: diagTitle, diagnosisComment: diagComment)
+        self.init(diagnosisTitle: diagTitle, diagnosisComment: diagComment, ckRecordID: ckRecord.recordID)
     }
 }
 
@@ -41,5 +41,11 @@ extension CKRecord {
         self.init(recordType: DiagnosisConstants.recordTypeKey, recordID: diagnosis.ckRecordID)
         self.setValue(diagnosis.diagnosisTitle, forKey: DiagnosisConstants.diagTitleKey)
         self.setValue(diagnosis.diagnosisComment, forKey: DiagnosisConstants.diagCommentKey)
+    }
+}
+
+extension Diagnosis: Equatable {
+    static func == (lhs: Diagnosis, rhs: Diagnosis) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
     }
 }

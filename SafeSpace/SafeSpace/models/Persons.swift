@@ -32,7 +32,7 @@ extension Persons {
         guard let peopleName = ckRecord[PersonConstant.personNameKey] as? String,
             let peoplePhone = ckRecord[PersonConstant.personPhoneKey] as? String
             else {return nil}
-        self.init(peopleName: peopleName, peoplePhone: peoplePhone)
+        self.init(peopleName: peopleName, peoplePhone: peoplePhone, ckRecordID: ckRecord.recordID)
     }
 }
 
@@ -41,5 +41,11 @@ extension CKRecord {
         self.init(recordType: PersonConstant.recordTypeKey, recordID: persons.ckRecordID)
         self.setValue(persons.peopleName, forKey: PersonConstant.personNameKey)
         self.setValue(persons.peoplePhone, forKey: PersonConstant.personPhoneKey)
+    }
+}
+
+extension Persons: Equatable {
+    static func == (lhs: Persons, rhs: Persons) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
     }
 }

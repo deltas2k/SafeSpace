@@ -10,8 +10,13 @@ import UIKit
 
 class EntryListTableViewController: UITableViewController {
     
+    //var refreshControl = UIRefreshControl()
+    @IBOutlet var journalTableView: UITableView!
+    
+    let entry: [Entry] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         EntryController.shared.fetchEntries { (success) in
             if success {
                 self.updateViews()
@@ -47,23 +52,24 @@ class EntryListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-       if editingStyle == .delete {
-           //we grab the hype we want to delete from indexpath
-        let entryToDelete = EntryController.shared.entry[indexPath.row]
-           //make sure that the hype exists in the hypes array
-        guard let index = EntryController.shared.entry.firstIndex(of: entryToDelete) else {return}
-           //call our delete method to delete the hype
-        EntryController.shared.delete(entryToDelete) { (success) in
-               //if it deletes successfully, we remove the hype from SOT and delete the row
-               if success {
-                EntryController.shared.entry.remove(at: index)
-                   DispatchQueue.main.async {
-                       tableView.deleteRows(at: [indexPath], with: .automatic)
-                   }
-               }
-           }
-       }
-   }
+        if editingStyle == .delete {
+            //we grab the hype we want to delete from indexpath
+            let entryToDelete = EntryController.shared.entry[indexPath.row]
+            //make sure that the hype exists in the hypes array
+            guard let index = EntryController.shared.entry.firstIndex(of: entryToDelete)
+                else {return}
+            //call our delete method to delete the hype
+            EntryController.shared.delete(entryToDelete) { (success) in
+                //if it deletes successfully, we remove the hype from SOT and delete the row
+                if success {
+                    EntryController.shared.entry.remove(at: index)
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
+                }
+            }
+        }
+    }
     
     
     // MARK: - Navigation
