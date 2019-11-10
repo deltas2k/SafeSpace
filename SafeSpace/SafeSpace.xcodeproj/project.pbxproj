@@ -18,6 +18,11 @@
 		342452142366155D007D4DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342452122366155D007D4DCA /* LaunchScreen.storyboard */; };
 		3439D89A2377509E0015F814 /* DiagnosisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8992377509E0015F814 /* DiagnosisController.swift */; };
 		3439D89C237760340015F814 /* DiagnosisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D89B237760340015F814 /* DiagnosisTableViewController.swift */; };
+		3439D89E237861F90015F814 /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D89D237861F90015F814 /* MedicationsController.swift */; };
+		3439D8A0237865EF0015F814 /* WarningSignsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D89F237865EF0015F814 /* WarningSignsController.swift */; };
+		3439D8A223786C990015F814 /* ActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8A123786C990015F814 /* ActivitiesController.swift */; };
+		3439D8A423786CA80015F814 /* PeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8A323786CA80015F814 /* PeopleController.swift */; };
+		3439D8A623786CB30015F814 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8A523786CB30015F814 /* PlacesController.swift */; };
 		345F14B2237491AB00D08C17 /* SafetyPlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F14B1237491AB00D08C17 /* SafetyPlan.storyboard */; };
 		345F14BA2374A46700D08C17 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F14B92374A46700D08C17 /* CloudKit.framework */; };
 		345F14BC2374B5ED00D08C17 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14BB2374B5ED00D08C17 /* Diagnosis.swift */; };
@@ -50,6 +55,11 @@
 		342452152366155D007D4DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3439D8992377509E0015F814 /* DiagnosisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiagnosisController.swift; path = SafeSpace/DiagnosisController.swift; sourceTree = SOURCE_ROOT; };
 		3439D89B237760340015F814 /* DiagnosisTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiagnosisTableViewController.swift; path = SafeSpace/controllers/DiagnosisTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		3439D89D237861F90015F814 /* MedicationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
+		3439D89F237865EF0015F814 /* WarningSignsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningSignsController.swift; sourceTree = "<group>"; };
+		3439D8A123786C990015F814 /* ActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesController.swift; sourceTree = "<group>"; };
+		3439D8A323786CA80015F814 /* PeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleController.swift; sourceTree = "<group>"; };
+		3439D8A523786CB30015F814 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
 		345F14B1237491AB00D08C17 /* SafetyPlan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SafetyPlan.storyboard; sourceTree = "<group>"; };
 		345F14B72374A45300D08C17 /* SafeSpace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeSpace.entitlements; sourceTree = "<group>"; };
 		345F14B92374A46700D08C17 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -162,6 +172,11 @@
 				340DABCE237321EE009342C9 /* PhysicianController.swift */,
 				345F14BF2374D16E00D08C17 /* JournalController.swift */,
 				3439D8992377509E0015F814 /* DiagnosisController.swift */,
+				3439D89D237861F90015F814 /* MedicationsController.swift */,
+				3439D89F237865EF0015F814 /* WarningSignsController.swift */,
+				3439D8A123786C990015F814 /* ActivitiesController.swift */,
+				3439D8A323786CA80015F814 /* PeopleController.swift */,
+				3439D8A523786CB30015F814 /* PlacesController.swift */,
 			);
 			path = modelControllers;
 			sourceTree = "<group>";
@@ -269,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3439D8A423786CA80015F814 /* PeopleController.swift in Sources */,
 				340DABCF237321EE009342C9 /* PhysicianController.swift in Sources */,
 				340DABD123736381009342C9 /* PhysicianTableViewController.swift in Sources */,
 				34EEE8222375FD8E00402084 /* MapAnnotation.swift in Sources */,
@@ -282,12 +298,16 @@
 				345F14C02374D16E00D08C17 /* JournalController.swift in Sources */,
 				34A297062370D543007AFC62 /* constants.swift in Sources */,
 				345F14C22374D5D900D08C17 /* EntryListTableViewController.swift in Sources */,
+				3439D8A0237865EF0015F814 /* WarningSignsController.swift in Sources */,
 				34EEE8202375E6C500402084 /* PhysicianDetailViewController.swift in Sources */,
 				34EEE81C2375DB3E00402084 /* Persons.swift in Sources */,
+				3439D8A623786CB30015F814 /* PlacesController.swift in Sources */,
 				34EEE81A2375D85A00402084 /* Activites.swift in Sources */,
 				34EEE81E2375DD1800402084 /* Places.swift in Sources */,
+				3439D8A223786C990015F814 /* ActivitiesController.swift in Sources */,
 				345F14C62374F34A00D08C17 /* Medications.swift in Sources */,
 				3424520A2366155C007D4DCA /* SceneDelegate.swift in Sources */,
+				3439D89E237861F90015F814 /* MedicationsController.swift in Sources */,
 				3439D89C237760340015F814 /* DiagnosisTableViewController.swift in Sources */,
 				345F14C42374D60300D08C17 /* EntryDetailViewController.swift in Sources */,
 				345F14BE2374D06A00D08C17 /* Journal.swift in Sources */,
