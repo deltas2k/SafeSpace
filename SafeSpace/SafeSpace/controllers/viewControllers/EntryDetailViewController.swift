@@ -40,6 +40,8 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
             else {return}
         
         if let entry = entry {
+            entry.titleText = title
+            entry.bodyText = body
             EntryController.shared.update(entry) { (success) in
                 if success {
                     DispatchQueue.main.async {

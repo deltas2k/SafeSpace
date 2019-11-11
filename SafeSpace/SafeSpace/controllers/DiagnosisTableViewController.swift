@@ -66,20 +66,38 @@ class DiagnosisTableViewController: UITableViewController {
         let alertcontroller = UIAlertController(title: "Enter Diagnosis", message: "Enter a diagnosis here", preferredStyle: .alert)
         alertcontroller.addTextField { (textfield) in
             textfield.placeholder = "Enter diagnosis here"
+            if let diagnosis = diagnosis {
+                textfield.text = diagnosis.diagnosisTitle
+            }
         }
         alertcontroller.addTextField { (textfield) in
             textfield.placeholder = "Comment what that means to you"
+            if let diagnosis = diagnosis {
+                textfield.text = diagnosis.diagnosisComment
+            }
         }
         
         let postAction = UIAlertAction(title: "Save", style: .default) { (_) in
             guard let diagName = alertcontroller.textFields?[0].text,
                 let diagComment = alertcontroller.textFields?[1].text,
                 !diagName.isEmpty else {return}
-            DiagnosisController.sharedDiagnosis.saveDiagnosis(with: diagName, diagDose: diagComment) { (success) in
+            if let diagnosis = diagnosis {
+                diagnosis.diagnosisTitle = diagName
+                diagnosis.diagnosisComment = diagComment
+                DiagnosisController.sharedDiagnosis.updateDiagnosis(diagnosis) { (success) in
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            } else {
+                
+                DiagnosisController.sharedDiagnosis.saveDiagnosis(with: diagName, diagDose: diagComment) { (success) in
                 if success {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                    
+                }
                 }
             }
         }
