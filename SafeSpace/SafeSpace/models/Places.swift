@@ -16,8 +16,8 @@ struct PlacesConstant {
 }
 
 class Places {
-    let placesName: String
-    let placesComment: String
+    var placesName: String
+    var placesComment: String
     let ckRecordID: CKRecord.ID
     
     init(placesName: String, placesComment:String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {

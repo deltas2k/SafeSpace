@@ -16,8 +16,8 @@ struct PersonConstant {
 }
 
 class Persons {
-    let peopleName: String
-    let peoplePhone: String
+    var peopleName: String
+    var peoplePhone: String
     let ckRecordID: CKRecord.ID
     
     init(peopleName: String, peoplePhone:String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {

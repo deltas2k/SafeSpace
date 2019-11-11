@@ -16,8 +16,8 @@ struct ActivitiesConstant {
 }
 
 class Activities {
-    let activities: String
-    let activitiesComment: String
+    var activities: String
+    var activitiesComment: String
     let ckRecordID: CKRecord.ID
     
     init(activities: String, activitiesComment:String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {

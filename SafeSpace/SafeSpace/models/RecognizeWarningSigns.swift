@@ -10,9 +10,9 @@ import Foundation
 import CloudKit
 
 struct RecognizeWSConstants {
-    static let RWSTitleKey = "diagnosisTitle"
-    static let RWSCommentKey = "diagnosisComment"
-    static let recordTypeKey = "Diagnosis"
+    static let RWSTitleKey = "warningSignTitle"
+    static let RWSCommentKey = "warningSignComment"
+    static let recordTypeKey = "WarningSign"
 }
 
 class RecognizeWS {

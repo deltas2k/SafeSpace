@@ -43,7 +43,7 @@ class MedicationsController {
             guard let records = foundRecords else {completion(false); return}
             let medications = records.compactMap( {Medications(ckRecord: $0)})
             self.medications = medications
-            print("fetched diagnosis successfully")
+            print("fetched medication successfully")
             completion(true)
         }
     }

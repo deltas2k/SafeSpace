@@ -490,17 +490,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTM-XT-7z0">
-                                <rect key="frame" x="16" y="132" width="343" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Uf-ny-hQn">
-                                <rect key="frame" x="16" y="196" width="343" height="441"/>
+                                <rect key="frame" x="16" y="217" width="343" height="420"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="Dly-a3-Zsh"/>
-                                    <constraint firstAttribute="height" constant="441" id="csd-YO-box"/>
+                                    <constraint firstAttribute="height" constant="420" id="csd-YO-box"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -513,18 +508,32 @@
                                     <action selector="clearButtonTapped:" destination="Y0p-SM-ayc" eventType="touchUpInside" id="4Ny-Um-bek"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-3K-f30">
+                                <rect key="frame" x="16" y="180" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where is your mood today on a scale of 1 to 10?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ln5-fl-cMt">
+                                <rect key="frame" x="16" y="155" width="308" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTM-XT-7z0">
+                                <rect key="frame" x="16" y="113" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1Jc-2A-9yn" firstAttribute="trailing" secondItem="6Uf-ny-hQn" secondAttribute="trailing" constant="16" id="GAY-Oa-NU2"/>
-                            <constraint firstItem="6Uf-ny-hQn" firstAttribute="top" secondItem="mTM-XT-7z0" secondAttribute="bottom" constant="30" id="LPd-Tb-BCe"/>
                             <constraint firstItem="UjM-ef-QTX" firstAttribute="top" secondItem="6Uf-ny-hQn" secondAttribute="bottom" constant="33" id="Tzm-Qz-m7h"/>
                             <constraint firstItem="UjM-ef-QTX" firstAttribute="leading" secondItem="1Jc-2A-9yn" secondAttribute="leading" constant="147" id="UEg-NG-fEB"/>
                             <constraint firstItem="1Jc-2A-9yn" firstAttribute="trailing" secondItem="UjM-ef-QTX" secondAttribute="trailing" constant="147" id="ZRC-lM-RDQ"/>
                             <constraint firstItem="1Jc-2A-9yn" firstAttribute="trailing" secondItem="mTM-XT-7z0" secondAttribute="trailing" constant="16" id="eHD-Gx-4Jb"/>
                             <constraint firstItem="6Uf-ny-hQn" firstAttribute="leading" secondItem="1Jc-2A-9yn" secondAttribute="leading" constant="16" id="xEg-Bc-c5r"/>
                             <constraint firstItem="mTM-XT-7z0" firstAttribute="leading" secondItem="1Jc-2A-9yn" secondAttribute="leading" constant="16" id="xkb-rd-FXA"/>
-                            <constraint firstItem="mTM-XT-7z0" firstAttribute="top" secondItem="1Jc-2A-9yn" secondAttribute="top" constant="44" id="xpc-dQ-WHw"/>
                             <constraint firstItem="1Jc-2A-9yn" firstAttribute="bottom" secondItem="UjM-ef-QTX" secondAttribute="bottom" constant="29" id="ymb-AW-a3h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Jc-2A-9yn"/>

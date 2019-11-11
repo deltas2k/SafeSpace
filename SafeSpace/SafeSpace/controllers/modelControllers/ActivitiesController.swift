@@ -27,7 +27,7 @@ class ActivitesController {
                 let savedActivity = Activities(ckRecord: record)
                 else { completion(false); return }
             self.activities.append(savedActivity)
-            print("Warning sign saved Successfully")
+            print("Activity saved Successfully")
             completion(true)
         }
     }
@@ -43,7 +43,7 @@ class ActivitesController {
             guard let records = foundRecords else {completion(false); return}
             let activities = records.compactMap( {Activities(ckRecord: $0)})
             self.activities = activities
-            print("fetched warning sign successfully")
+            print("fetched activity successfully")
             completion(true)
         }
     }
@@ -82,7 +82,7 @@ class ActivitesController {
                 print("unexpected record deleted")
                 return
             }
-            print("Successfully deleted warning sign from CloudKit")
+            print("Successfully deleted activity from CloudKit")
             completion(true)
         }
         privateDB.add(operation)

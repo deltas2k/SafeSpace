@@ -16,8 +16,8 @@ struct MedicationsConstants {
 }
 
 class Medications {
-    let medName: String
-    let medDosage: String
+    var medName: String
+    var medDosage: String
     let ckRecordID: CKRecord.ID
     
     init(medName: String, medDosage:String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {

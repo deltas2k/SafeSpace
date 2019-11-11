@@ -66,12 +66,16 @@ class DiagnosisTableViewController: UITableViewController {
         let alertcontroller = UIAlertController(title: "Enter Diagnosis", message: "Enter a diagnosis here", preferredStyle: .alert)
         alertcontroller.addTextField { (textfield) in
             textfield.placeholder = "Enter diagnosis here"
+            textfield.autocorrectionType = .yes
+            textfield.autocapitalizationType = .sentences
             if let diagnosis = diagnosis {
                 textfield.text = diagnosis.diagnosisTitle
             }
         }
         alertcontroller.addTextField { (textfield) in
             textfield.placeholder = "Comment what that means to you"
+            textfield.autocorrectionType = .yes
+            textfield.autocapitalizationType = .sentences
             if let diagnosis = diagnosis {
                 textfield.text = diagnosis.diagnosisComment
             }
