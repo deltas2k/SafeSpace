@@ -18,9 +18,11 @@ class WarningSignsTableViewController: UITableViewController {
         self.loadData()
     }
     @IBAction func warningSignButtonTapped(_ sender: Any) {
-        presentAlertController(for: nil)
+      //  presentAlertController(for: nil)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -38,7 +40,7 @@ class WarningSignsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let wsToUpdate = WarningSignsController.sharedWS.recognizeWS[indexPath.row]
-        presentAlertController(for: wsToUpdate)
+      //  presentAlertController(for: wsToUpdate)
     }
     
     // Override to support editing the table view.
@@ -56,12 +58,21 @@ class WarningSignsTableViewController: UITableViewController {
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let detailVC = segue.destination as? WarningSignDetailViewController,
+                let selectedRow = tableView.indexPathForSelectedRow?.row {
+                
+                let recognizeWS = WarningSignsController.sharedWS.recognizeWS[selectedRow]
+                detailVC.recognizeWS = recognizeWS
+            }
+        }
+    }
     
     
     // MARK: - Methods
     
-    
+    /*
     func presentAlertController(for warningSign: RecognizeWS?) {
         let alertcontroller = UIAlertController(title: "Enter your warning signs", message: "Enter a warning signs here", preferredStyle: .alert)
         alertcontroller.addTextField { (textfield) in
@@ -109,7 +120,7 @@ class WarningSignsTableViewController: UITableViewController {
         alertcontroller.addAction(postAction)
         alertcontroller.addAction(cancelAction)
         present(alertcontroller, animated: true)
-    }
+    }*/
     
     func updateViews() {
         DispatchQueue.main.async {

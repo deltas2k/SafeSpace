@@ -14,6 +14,7 @@ class EntryListTableViewController: UITableViewController {
     @IBOutlet var journalTableView: UITableView!
     
     let entry: [Entry] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,10 +44,9 @@ class EntryListTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as! JournalTableViewCell
         let entry = EntryController.shared.entry[indexPath.row]
-        cell.textLabel?.text = entry.titleText
-        cell.detailTextLabel?.text = entry.timestamp.formatDate()
+        cell.entry = entry
         
         return cell
     }

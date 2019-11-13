@@ -18,7 +18,7 @@
  
  */
 
-import Foundation
+import UIKit
 
 struct DoctorConstants {
     static let baseURL = "https://api.yelp.com/v3/businesses/search"
@@ -45,4 +45,13 @@ extension Date {
         
         return formatter.string(from: self)
     }
+}
+
+extension UIViewController {
+  func presentSimpleAlertWith(title: String, message: String?) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let okayAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+    alertController.addAction(okayAction)
+    present(alertController, animated: true)
+  }
 }

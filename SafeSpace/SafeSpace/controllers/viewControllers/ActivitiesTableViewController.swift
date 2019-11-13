@@ -10,15 +10,21 @@ import UIKit
 
 class ActivitiesTableViewController: UITableViewController {
     
+    let activities: [Activities] = []
+    
     @IBOutlet weak var activitiesButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadData()
     }
     @IBAction func activitiesButtonTapped(_ sender: Any) {
-        presentAlertController(for: nil)
+        //presentAlertController(for: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -36,7 +42,7 @@ class ActivitiesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let activityToUpdate = ActivitesController.sharedActivities.activities[indexPath.row]
-        presentAlertController(for: activityToUpdate)
+        //presentAlertController(for: activityToUpdate)
     }
     
     // Override to support editing the table view.
@@ -54,12 +60,21 @@ class ActivitiesTableViewController: UITableViewController {
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let detailVC = segue.destination as? ActivitesDetailViewController,
+                let selectedRow = tableView.indexPathForSelectedRow?.row {
+                
+                let activities = ActivitesController.sharedActivities.activities[selectedRow]
+                detailVC.activities = activities
+            }
+        }
+    }
     
     
     // MARK: - Methods
     
-    
+    /*
     func presentAlertController(for activity: Activities?) {
         let alertcontroller = UIAlertController(title: "Enter some of your favorite activities", message: "Enter an activity here", preferredStyle: .alert)
         alertcontroller.addTextField { (textfield) in
@@ -107,7 +122,7 @@ class ActivitiesTableViewController: UITableViewController {
         alertcontroller.addAction(postAction)
         alertcontroller.addAction(cancelAction)
         present(alertcontroller, animated: true)
-    }
+    }*/
     
     func updateViews() {
         DispatchQueue.main.async {

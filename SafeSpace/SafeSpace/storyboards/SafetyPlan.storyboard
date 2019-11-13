@@ -195,7 +195,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="BwL-vi-XzH" secondAttribute="trailing" constant="8" id="Gi4-HI-pK8"/>
                                 <constraint firstAttribute="bottom" secondItem="BwL-vi-XzH" secondAttribute="bottom" constant="8" id="Hhy-4B-vom"/>
@@ -227,6 +227,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iQ7-3h-c0B" kind="show" identifier="toDetailVC" id="VeZ-nO-xuE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -238,6 +241,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tgq-ay-EY5">
                             <connections>
                                 <action selector="activitiesButtonTapped:" destination="u2g-qY-MAL" id="2wr-3F-diV"/>
+                                <segue destination="iQ7-3h-c0B" kind="show" id="hcl-Cb-fet"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -248,6 +252,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX1-2F-YWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3202.898550724638" y="638.83928571428567"/>
+        </scene>
+        <!--Activites Detail View Controller-->
+        <scene sceneID="Kjc-88-4gf">
+            <objects>
+                <viewController id="iQ7-3h-c0B" customClass="ActivitesDetailViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C7K-wC-aoz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter warning sign here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8R-2V-TAN">
+                                <rect key="frame" x="20" y="132" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OVM-jB-NmN">
+                                <rect key="frame" x="20" y="203" width="374" height="368"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="A8R-2V-TAN" firstAttribute="top" secondItem="ikO-EN-aJ2" secondAttribute="top" constant="44" id="2VP-Qx-kDz"/>
+                            <constraint firstItem="OVM-jB-NmN" firstAttribute="leading" secondItem="ikO-EN-aJ2" secondAttribute="leading" constant="20" id="2h9-oQ-j1n"/>
+                            <constraint firstItem="OVM-jB-NmN" firstAttribute="top" secondItem="A8R-2V-TAN" secondAttribute="bottom" constant="37" id="h11-wl-iyn"/>
+                            <constraint firstItem="ikO-EN-aJ2" firstAttribute="trailing" secondItem="A8R-2V-TAN" secondAttribute="trailing" constant="20" id="tbq-i3-dMV"/>
+                            <constraint firstItem="ikO-EN-aJ2" firstAttribute="bottom" secondItem="OVM-jB-NmN" secondAttribute="bottom" constant="291" id="uht-1Q-mZw"/>
+                            <constraint firstItem="ikO-EN-aJ2" firstAttribute="trailing" secondItem="OVM-jB-NmN" secondAttribute="trailing" constant="20" id="yAW-gw-gIa"/>
+                            <constraint firstItem="A8R-2V-TAN" firstAttribute="leading" secondItem="ikO-EN-aJ2" secondAttribute="leading" constant="20" id="ych-Rh-szA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ikO-EN-aJ2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pvl-3X-eol">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Y3-0e-2K9">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="iQ7-3h-c0B" id="Qz0-MC-h0i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="OVM-jB-NmN" id="b7D-5w-KgW"/>
+                        <outlet property="titleTextField" destination="A8R-2V-TAN" id="mnZ-wg-b20"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LkB-Lz-l8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4074" y="639"/>
         </scene>
         <!--People To Call-->
         <scene sceneID="N69-Nv-y87">
@@ -268,7 +321,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="fRw-OS-xfD" firstAttribute="leading" secondItem="1IP-Gs-Seq" secondAttribute="leading" constant="8" id="MrE-2b-pSY"/>
                                 <constraint firstItem="fRw-OS-xfD" firstAttribute="top" secondItem="1IP-Gs-Seq" secondAttribute="top" constant="8" id="fbu-we-H9u"/>
@@ -320,7 +373,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcg-Xe-0q4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.7101449275365" y="1014.5089285714286"/>
+            <point key="canvasLocation" x="2346" y="1011"/>
         </scene>
         <!--Places To Go-->
         <scene sceneID="Ya3-0w-H2B">
@@ -341,7 +394,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="IFN-gm-Y4w" firstAttribute="top" secondItem="CaA-dU-2o6" secondAttribute="top" constant="8" id="4sl-1Q-6n9"/>
                                 <constraint firstAttribute="trailing" secondItem="IFN-gm-Y4w" secondAttribute="trailing" constant="8" id="55O-Lk-bTJ"/>
@@ -373,6 +426,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Y1B-f7-hzJ" kind="show" identifier="toDetailVC" id="emb-IK-Ffx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -384,6 +440,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EdP-mB-V7c">
                             <connections>
                                 <action selector="placesButtonTapped:" destination="KLt-8s-a26" id="A2t-Vv-fSx"/>
+                                <segue destination="Y1B-f7-hzJ" kind="show" id="KdB-bs-ehB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -393,7 +450,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODW-Fe-OPr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2511.594202898551" y="1014.5089285714286"/>
+            <point key="canvasLocation" x="3203" y="1357"/>
         </scene>
         <!--Recognize Warning Signs-->
         <scene sceneID="cKl-mv-ag8">
@@ -415,7 +472,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="xwJ-nP-Usf" secondAttribute="trailing" constant="8" id="24Z-4C-rC6"/>
                                 <constraint firstItem="xwJ-nP-Usf" firstAttribute="leading" secondItem="BSd-uY-lhf" secondAttribute="leading" constant="8" id="T6C-hy-oqN"/>
@@ -447,6 +504,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="dID-iM-WvN" kind="show" identifier="toDetailVC" id="fO3-5X-10R"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -458,6 +518,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Iz-mh-IFC">
                             <connections>
                                 <action selector="warningSignButtonTapped:" destination="GAs-MO-0K1" id="v6h-Q1-zuP"/>
+                                <segue destination="dID-iM-WvN" kind="show" id="LTG-Da-ut0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -468,6 +529,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZt-Tx-nJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3205.7971014492755" y="-85.044642857142847"/>
+        </scene>
+        <!--Warning Sign Detail View Controller-->
+        <scene sceneID="3wi-zi-c7W">
+            <objects>
+                <viewController id="dID-iM-WvN" customClass="WarningSignDetailViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c3c-HF-ydF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter warning sign here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-Vm-S5P">
+                                <rect key="frame" x="20" y="132" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HAV-CP-LK6">
+                                <rect key="frame" x="20" y="203" width="374" height="368"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Cte-yj-crh" firstAttribute="trailing" secondItem="QBh-Vm-S5P" secondAttribute="trailing" constant="20" id="6pw-kd-SaG"/>
+                            <constraint firstItem="Cte-yj-crh" firstAttribute="bottom" secondItem="HAV-CP-LK6" secondAttribute="bottom" constant="291" id="EbH-uP-IeK"/>
+                            <constraint firstItem="QBh-Vm-S5P" firstAttribute="leading" secondItem="Cte-yj-crh" secondAttribute="leading" constant="20" id="NNe-Mn-o9r"/>
+                            <constraint firstItem="Cte-yj-crh" firstAttribute="trailing" secondItem="HAV-CP-LK6" secondAttribute="trailing" constant="20" id="V68-ns-Sxi"/>
+                            <constraint firstItem="HAV-CP-LK6" firstAttribute="leading" secondItem="Cte-yj-crh" secondAttribute="leading" constant="20" id="ZNf-iZ-YxS"/>
+                            <constraint firstItem="QBh-Vm-S5P" firstAttribute="top" secondItem="Cte-yj-crh" secondAttribute="top" constant="44" id="lPd-VO-Qfz"/>
+                            <constraint firstItem="HAV-CP-LK6" firstAttribute="top" secondItem="QBh-Vm-S5P" secondAttribute="bottom" constant="37" id="xfW-1l-6mm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cte-yj-crh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Ws-Vc-p8M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="XHV-mL-x01">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="dID-iM-WvN" id="Rpn-Bn-DIi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="HAV-CP-LK6" id="paz-VI-T3P"/>
+                        <outlet property="titleTextField" destination="QBh-Vm-S5P" id="u9Y-SC-i4y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cy-lN-dqz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4074" y="-85"/>
         </scene>
         <!--Medications-->
         <scene sceneID="h9H-Pc-m0h">
@@ -488,7 +598,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="PpF-VI-d0w" secondAttribute="trailing" constant="8" id="1FC-26-pyQ"/>
                                 <constraint firstItem="PpF-VI-d0w" firstAttribute="leading" secondItem="ZPG-TK-wa6" secondAttribute="leading" constant="8" id="Oli-7g-gtz"/>
@@ -497,24 +607,24 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicationCell" textLabel="h5e-t8-X0s" detailTextLabel="arH-A1-gmq" style="IBUITableViewCellStyleValue1" id="2yT-Sb-WOm">
-                                <rect key="frame" x="0.0" y="137" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicationCell" textLabel="h5e-t8-X0s" detailTextLabel="arH-A1-gmq" style="IBUITableViewCellStyleSubtitle" id="2yT-Sb-WOm">
+                                <rect key="frame" x="0.0" y="137" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2yT-Sb-WOm" id="82V-Xt-EXv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5e-t8-X0s">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="arH-A1-gmq">
-                                            <rect key="frame" x="335" y="12" width="59" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="arH-A1-gmq">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -540,7 +650,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIo-dd-0Cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2511.594202898551" y="-433.25892857142856"/>
+            <point key="canvasLocation" x="2346" y="-443"/>
         </scene>
         <!--Diagnosis-->
         <scene sceneID="8dh-eq-vur">
@@ -562,7 +672,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="607-Eg-vxi" secondAttribute="trailing" constant="8" id="KlP-kT-vui"/>
                                 <constraint firstItem="607-Eg-vxi" firstAttribute="leading" secondItem="PsT-Gb-S2L" secondAttribute="leading" constant="8" id="YTJ-xq-es6"/>
@@ -594,6 +704,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="O0z-aG-Gww" kind="show" identifier="toDetailVC" id="XCG-vz-epM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -605,6 +718,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pTd-w8-w2x">
                             <connections>
                                 <action selector="diagnosisButtonTapped:" destination="V8F-bH-JiG" id="mU9-W9-cDH"/>
+                                <segue destination="O0z-aG-Gww" kind="show" id="eTf-r4-rPU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -614,7 +728,58 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmo-hz-Vx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.7101449275365" y="-433.25892857142856"/>
+            <point key="canvasLocation" x="3203" y="-792"/>
+        </scene>
+        <!--Diagnosis Detail View Controller-->
+        <scene sceneID="G5y-mz-brr">
+            <objects>
+                <viewController id="O0z-aG-Gww" customClass="DiagnosisDetailViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Zh-pi-jjV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter diagnosis here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EC9-6R-eug">
+                                <rect key="frame" x="20" y="132" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jxt-Nf-coA">
+                                <rect key="frame" x="20" y="203" width="374" height="319"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Un4-hx-OHi" firstAttribute="bottom" secondItem="Jxt-Nf-coA" secondAttribute="bottom" constant="291" id="2WJ-H2-2oq"/>
+                            <constraint firstItem="Jxt-Nf-coA" firstAttribute="leading" secondItem="Un4-hx-OHi" secondAttribute="leading" constant="20" id="Lgb-5A-TvW"/>
+                            <constraint firstItem="Un4-hx-OHi" firstAttribute="trailing" secondItem="EC9-6R-eug" secondAttribute="trailing" constant="20" id="VHg-zO-4rg"/>
+                            <constraint firstItem="EC9-6R-eug" firstAttribute="leading" secondItem="Un4-hx-OHi" secondAttribute="leading" constant="20" id="VyG-d5-8lv"/>
+                            <constraint firstItem="Jxt-Nf-coA" firstAttribute="top" secondItem="EC9-6R-eug" secondAttribute="bottom" constant="37" id="XYr-UY-egK"/>
+                            <constraint firstItem="EC9-6R-eug" firstAttribute="top" secondItem="Un4-hx-OHi" secondAttribute="top" constant="44" id="i9N-yW-SgP"/>
+                            <constraint firstItem="Un4-hx-OHi" firstAttribute="trailing" secondItem="Jxt-Nf-coA" secondAttribute="trailing" constant="20" id="jHR-6z-Ql3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Un4-hx-OHi"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5dz-pt-Cxf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Dh-wH-KPJ">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="O0z-aG-Gww" id="dti-jx-nea"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="Jxt-Nf-coA" id="smF-4P-sMS"/>
+                        <outlet property="titleTextField" destination="EC9-6R-eug" id="lmN-e0-SAn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQW-S5-X3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4073.913043478261" y="-792.1875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mqA-Dd-Gdp">
@@ -634,8 +799,63 @@
             </objects>
             <point key="canvasLocation" x="1436.2318840579712" y="268.52678571428572"/>
         </scene>
+        <!--Places Detail View Controller-->
+        <scene sceneID="0qw-Q3-QVN">
+            <objects>
+                <viewController id="Y1B-f7-hzJ" customClass="PlacesDetailViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ace-nD-JbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter warning sign here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-4C-t8u">
+                                <rect key="frame" x="20" y="132" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LDa-sn-j2E">
+                                <rect key="frame" x="20" y="203" width="374" height="368"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="30Y-4C-t8u" firstAttribute="top" secondItem="G2F-78-ATn" secondAttribute="top" constant="44" id="9QX-v8-fir"/>
+                            <constraint firstItem="30Y-4C-t8u" firstAttribute="leading" secondItem="G2F-78-ATn" secondAttribute="leading" constant="20" id="M8c-UE-htY"/>
+                            <constraint firstItem="LDa-sn-j2E" firstAttribute="top" secondItem="30Y-4C-t8u" secondAttribute="bottom" constant="37" id="RtZ-hu-rnL"/>
+                            <constraint firstItem="G2F-78-ATn" firstAttribute="bottom" secondItem="LDa-sn-j2E" secondAttribute="bottom" constant="291" id="cgb-fO-F2s"/>
+                            <constraint firstItem="G2F-78-ATn" firstAttribute="trailing" secondItem="30Y-4C-t8u" secondAttribute="trailing" constant="20" id="g24-Tx-seg"/>
+                            <constraint firstItem="LDa-sn-j2E" firstAttribute="leading" secondItem="G2F-78-ATn" secondAttribute="leading" constant="20" id="lwC-Nc-zFw"/>
+                            <constraint firstItem="G2F-78-ATn" firstAttribute="trailing" secondItem="LDa-sn-j2E" secondAttribute="trailing" constant="20" id="mZ7-G9-Xb5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G2F-78-ATn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ddk-Co-N7m">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="N34-hP-mFm">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Y1B-f7-hzJ" id="qfV-Jo-L1S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="LDa-sn-j2E" id="rT5-jk-PAP"/>
+                        <outlet property="titleTextField" destination="30Y-4C-t8u" id="JKX-R5-LlX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nen-N5-HiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4074" y="1357"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.right.circle" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="emb-IK-Ffx"/>
+        <segue reference="XCG-vz-epM"/>
+        <segue reference="fO3-5X-10R"/>
+        <segue reference="hcl-Cb-fet"/>
+    </inferredMetricsTieBreakers>
 </document>

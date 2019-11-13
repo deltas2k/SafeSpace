@@ -13,6 +13,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
+    @IBOutlet weak var moodScoreDisplayLabel: UILabel!
     
     var entry: Entry? {
         didSet {
@@ -21,6 +22,13 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
                 self.updateViews()
             }
         }
+    }
+    
+    @IBOutlet weak var happinessaBarSlide: UISlider!
+    
+    @IBAction func happinessBarSlideChanged(_ sender: Any) {
+        entry?.happinessBar = Int(happinessaBarSlide.value)
+        moodScoreDisplayLabel.text = String(Int(happinessaBarSlide.value))
     }
     
     override func viewDidLoad() {
@@ -38,10 +46,12 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
         guard let title = titleTextField.text,
             let body = bodyTextView.text
             else {return}
-        
+        let happinessBar = Int(happinessaBarSlide.value)
         if let entry = entry {
             entry.titleText = title
             entry.bodyText = body
+            entry.happinessBar = happinessBar
+            
             EntryController.shared.update(entry) { (success) in
                 if success {
                     DispatchQueue.main.async {
@@ -51,7 +61,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             // save new
-            EntryController.shared.saveEntry(with: title, bodyText: body) { (success) in
+            EntryController.shared.saveEntry(with: title, bodyText: body, happinessBar: happinessBar) { (success) in
                 if success {
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)
@@ -76,6 +86,8 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate {
         if let entry = entry {
             titleTextField.text = entry.titleText
             bodyTextView.text = entry.bodyText
+            happinessaBarSlide.value = Float(entry.happinessBar)
+            moodScoreDisplayLabel.text = String(entry.happinessBar)
             print("entry loaded")
         }
     }

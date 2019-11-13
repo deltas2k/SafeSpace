@@ -17,8 +17,13 @@ class PlacesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.loadData()
     }
+    
     @IBAction func placesButtonTapped(_ sender: Any) {
-        presentAlertController(for: nil)
+       // presentAlertController(for: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +41,7 @@ class PlacesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let placeToUpdate = PlacesController.sharedPlaces.places[indexPath.row]
-        presentAlertController(for: placeToUpdate)
+        //presentAlertController(for: placeToUpdate)
     }
     
     // Override to support editing the table view.
@@ -54,12 +59,21 @@ class PlacesTableViewController: UITableViewController {
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let detailVC = segue.destination as? PlacesDetailViewController,
+                let selectedRow = tableView.indexPathForSelectedRow?.row {
+                
+                let places = PlacesController.sharedPlaces.places[selectedRow]
+                detailVC.places = places
+            }
+        }
+    }
     
     
     // MARK: - Methods
     
-    
+    /*
     func presentAlertController(for place: Places?) {
         let alertcontroller = UIAlertController(title: "Enter a favorite place", message: "One of you favorite spots that you can relax", preferredStyle: .alert)
         alertcontroller.addTextField { (textfield) in
@@ -107,7 +121,7 @@ class PlacesTableViewController: UITableViewController {
         alertcontroller.addAction(postAction)
         alertcontroller.addAction(cancelAction)
         present(alertcontroller, animated: true)
-    }
+    }*/
     
     func updateViews() {
         DispatchQueue.main.async {

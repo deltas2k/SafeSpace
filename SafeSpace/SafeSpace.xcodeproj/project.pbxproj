@@ -28,6 +28,11 @@
 		3439D8AC2379D9920015F814 /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8AB2379D9920015F814 /* ActivitiesTableViewController.swift */; };
 		3439D8AE2379D9A60015F814 /* PersonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8AD2379D9A60015F814 /* PersonsTableViewController.swift */; };
 		3439D8B02379D9B60015F814 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8AF2379D9B60015F814 /* PlacesTableViewController.swift */; };
+		3439D8B8237B2F0E0015F814 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8B7237B2F0E0015F814 /* JournalTableViewCell.swift */; };
+		3439D8BA237B82AA0015F814 /* DiagnosisDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8B9237B82AA0015F814 /* DiagnosisDetailViewController.swift */; };
+		3439D8BC237B88870015F814 /* WarningSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8BB237B88870015F814 /* WarningSignDetailViewController.swift */; };
+		3439D8BE237B8CA50015F814 /* ActivitesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8BD237B8CA50015F814 /* ActivitesDetailViewController.swift */; };
+		3439D8C0237B90BE0015F814 /* PlacesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439D8BF237B90BE0015F814 /* PlacesDetailViewController.swift */; };
 		345F14B2237491AB00D08C17 /* SafetyPlan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345F14B1237491AB00D08C17 /* SafetyPlan.storyboard */; };
 		345F14BA2374A46700D08C17 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345F14B92374A46700D08C17 /* CloudKit.framework */; };
 		345F14BC2374B5ED00D08C17 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14BB2374B5ED00D08C17 /* Diagnosis.swift */; };
@@ -70,6 +75,11 @@
 		3439D8AB2379D9920015F814 /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		3439D8AD2379D9A60015F814 /* PersonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsTableViewController.swift; sourceTree = "<group>"; };
 		3439D8AF2379D9B60015F814 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
+		3439D8B7237B2F0E0015F814 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalTableViewCell.swift; path = SafeSpace/JournalTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		3439D8B9237B82AA0015F814 /* DiagnosisDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiagnosisDetailViewController.swift; path = SafeSpace/controllers/DiagnosisDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		3439D8BB237B88870015F814 /* WarningSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningSignDetailViewController.swift; sourceTree = "<group>"; };
+		3439D8BD237B8CA50015F814 /* ActivitesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesDetailViewController.swift; sourceTree = "<group>"; };
+		3439D8BF237B90BE0015F814 /* PlacesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesDetailViewController.swift; sourceTree = "<group>"; };
 		345F14B1237491AB00D08C17 /* SafetyPlan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SafetyPlan.storyboard; sourceTree = "<group>"; };
 		345F14B72374A45300D08C17 /* SafeSpace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SafeSpace.entitlements; sourceTree = "<group>"; };
 		345F14B92374A46700D08C17 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -200,12 +210,17 @@
 				34EEE81F2375E6C500402084 /* PhysicianDetailViewController.swift */,
 				345F14C12374D5D900D08C17 /* EntryListTableViewController.swift */,
 				345F14C32374D60300D08C17 /* EntryDetailViewController.swift */,
+				3439D8B7237B2F0E0015F814 /* JournalTableViewCell.swift */,
 				3439D89B237760340015F814 /* DiagnosisTableViewController.swift */,
+				3439D8B9237B82AA0015F814 /* DiagnosisDetailViewController.swift */,
 				3439D8A72379D1860015F814 /* MedicationsTableViewController.swift */,
 				3439D8A92379D97A0015F814 /* WarningSignsTableViewController.swift */,
+				3439D8BB237B88870015F814 /* WarningSignDetailViewController.swift */,
 				3439D8AB2379D9920015F814 /* ActivitiesTableViewController.swift */,
+				3439D8BD237B8CA50015F814 /* ActivitesDetailViewController.swift */,
 				3439D8AD2379D9A60015F814 /* PersonsTableViewController.swift */,
 				3439D8AF2379D9B60015F814 /* PlacesTableViewController.swift */,
+				3439D8BF237B90BE0015F814 /* PlacesDetailViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -312,6 +327,8 @@
 				345F14BC2374B5ED00D08C17 /* Diagnosis.swift in Sources */,
 				345F14C82374FFCB00D08C17 /* RecognizeWarningSigns.swift in Sources */,
 				345F14C02374D16E00D08C17 /* JournalController.swift in Sources */,
+				3439D8C0237B90BE0015F814 /* PlacesDetailViewController.swift in Sources */,
+				3439D8BA237B82AA0015F814 /* DiagnosisDetailViewController.swift in Sources */,
 				3439D8AA2379D97A0015F814 /* WarningSignsTableViewController.swift in Sources */,
 				34A297062370D543007AFC62 /* constants.swift in Sources */,
 				345F14C22374D5D900D08C17 /* EntryListTableViewController.swift in Sources */,
@@ -321,6 +338,9 @@
 				34EEE81C2375DB3E00402084 /* Persons.swift in Sources */,
 				3439D8A623786CB30015F814 /* PlacesController.swift in Sources */,
 				34EEE81A2375D85A00402084 /* Activites.swift in Sources */,
+				3439D8BC237B88870015F814 /* WarningSignDetailViewController.swift in Sources */,
+				3439D8BE237B8CA50015F814 /* ActivitesDetailViewController.swift in Sources */,
+				3439D8B8237B2F0E0015F814 /* JournalTableViewCell.swift in Sources */,
 				34EEE81E2375DD1800402084 /* Places.swift in Sources */,
 				3439D8A223786C990015F814 /* ActivitiesController.swift in Sources */,
 				345F14C62374F34A00D08C17 /* Medications.swift in Sources */,

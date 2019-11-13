@@ -89,6 +89,7 @@ class PhysicianDetailViewController: UIViewController {
         phoneButton.setTitle(businesses.display_phone, for: .normal)
         addressButton.setTitle(self.setDisplayAddress(), for: .normal)
         
+        
         let initialLocation = CLLocation(latitude: businesses.coordinates.latitude, longitude: businesses.coordinates.longitude)
         
         let regionRadius: CLLocationDistance = 1000

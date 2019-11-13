@@ -14,8 +14,8 @@ class EntryController {
     let privateDB = CKContainer(identifier: "iCloud.deltas2k.SafeSpace2").privateCloudDatabase
     var entry: [Entry] = []
     
-    func saveEntry(with text: String, bodyText: String, completion: @escaping (_ success: Bool) -> Void) {
-        let newEntry = Entry(titleText: text, bodyText: bodyText)
+    func saveEntry(with text: String, bodyText: String, happinessBar: Int, completion: @escaping (_ success: Bool) -> Void) {
+        let newEntry = Entry(titleText: text, bodyText: bodyText, happinessBar: happinessBar)
         let hypeRecord = CKRecord(entry: newEntry)
         privateDB.save(hypeRecord) { (record, error) in
             if let error = error {
