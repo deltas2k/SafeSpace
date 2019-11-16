@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mql-2O-V9A">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -471,6 +471,79 @@
             </objects>
             <point key="canvasLocation" x="-407" y="-65"/>
         </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="2Ih-ah-IJP">
+            <objects>
+                <viewController id="KsD-Q9-KP8" customClass="GraphViewController" customModule="SafeSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdW-U7-8Er">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv4-vz-siI" userLabel="Container view">
+                                <rect key="frame" x="37.666666666666657" y="156" width="300" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYA-1b-9fz" customClass="CounterView" customModule="SafeSpace" customModuleProvider="target">
+                                        <rect key="frame" x="35" y="35" width="230" height="230"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="230" id="TSy-Bi-nsl"/>
+                                            <constraint firstAttribute="width" constant="230" id="rC5-r7-duK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                                <color key="value" red="0.1333333333" green="0.43137254899999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                                <color key="value" red="0.3411764706" green="0.85490196080000003" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUJ-3J-l3O" customClass="GraphView" customModule="SafeSpace">
+                                        <rect key="frame" x="0.0" y="35" width="300" height="230"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="5gV-kb-Md4"/>
+                                            <constraint firstAttribute="height" constant="230" id="z7J-tD-zml"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="0.97338944670000005" green="0.89249396319999996" blue="0.84020555019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.9725266695" green="0.21499277650000001" blue="0.047701563689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="AUJ-3J-l3O" firstAttribute="centerX" secondItem="wv4-vz-siI" secondAttribute="centerX" id="AyT-FK-q2p"/>
+                                    <constraint firstItem="cYA-1b-9fz" firstAttribute="centerY" secondItem="wv4-vz-siI" secondAttribute="centerY" id="Ot7-v9-PTY"/>
+                                    <constraint firstItem="AUJ-3J-l3O" firstAttribute="centerY" secondItem="wv4-vz-siI" secondAttribute="centerY" id="Zc3-SH-SNc"/>
+                                    <constraint firstAttribute="width" constant="300" id="bmm-DD-LNC"/>
+                                    <constraint firstItem="cYA-1b-9fz" firstAttribute="centerX" secondItem="wv4-vz-siI" secondAttribute="centerX" id="kUU-2I-LVg"/>
+                                    <constraint firstAttribute="height" constant="300" id="zjW-3r-9J2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wv4-vz-siI" firstAttribute="centerY" secondItem="fdW-U7-8Er" secondAttribute="centerY" constant="-100" id="RAX-Vz-oo3"/>
+                            <constraint firstItem="wv4-vz-siI" firstAttribute="centerX" secondItem="fdW-U7-8Er" secondAttribute="centerX" id="h5C-bl-YcE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mxP-yR-BPd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8va-C8-jdK"/>
+                    <connections>
+                        <outlet property="containerView" destination="wv4-vz-siI" id="iLs-um-ly2"/>
+                        <outlet property="graphView" destination="AUJ-3J-l3O" id="kNt-XX-46S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="set-Ui-uCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349.5999999999999" y="-1811.0837438423646"/>
+        </scene>
         <!--My Journal-->
         <scene sceneID="9pc-db-am4">
             <objects>
@@ -548,6 +621,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Journal" id="aiT-cu-7yk">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chart.pie" catalog="system" id="Cx1-dL-YSv">
+                            <connections>
+                                <segue destination="KsD-Q9-KP8" kind="show" id="dGW-0j-6Nl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="886-mx-0nH">
                             <connections>
                                 <segue destination="Y0p-SM-ayc" kind="show" id="LwF-Wy-MA4"/>
@@ -743,6 +821,7 @@
     </scenes>
     <resources>
         <image name="book" catalog="system" width="64" height="50"/>
+        <image name="chart.pie" catalog="system" width="64" height="60"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="phone.circle" catalog="system" width="64" height="60"/>

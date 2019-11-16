@@ -42,6 +42,8 @@
 		345F14C42374D60300D08C17 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C32374D60300D08C17 /* EntryDetailViewController.swift */; };
 		345F14C62374F34A00D08C17 /* Medications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C52374F34A00D08C17 /* Medications.swift */; };
 		345F14C82374FFCB00D08C17 /* RecognizeWarningSigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F14C72374FFCB00D08C17 /* RecognizeWarningSigns.swift */; };
+		347379B8237F27A800777A01 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347379B7237F27A800777A01 /* GraphView.swift */; };
+		347379BA237F2C5A00777A01 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347379B9237F2C5A00777A01 /* GraphViewController.swift */; };
 		34A297032370B8B2007AFC62 /* SOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A297022370B8B2007AFC62 /* SOSViewController.swift */; };
 		34A297062370D543007AFC62 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A297052370D543007AFC62 /* constants.swift */; };
 		34EEE81A2375D85A00402084 /* Activites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EEE8192375D85A00402084 /* Activites.swift */; };
@@ -90,6 +92,8 @@
 		345F14C32374D60300D08C17 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		345F14C52374F34A00D08C17 /* Medications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medications.swift; sourceTree = "<group>"; };
 		345F14C72374FFCB00D08C17 /* RecognizeWarningSigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeWarningSigns.swift; sourceTree = "<group>"; };
+		347379B7237F27A800777A01 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = SOURCE_ROOT; };
+		347379B9237F2C5A00777A01 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GraphViewController.swift; path = SafeSpace/GraphViewController.swift; sourceTree = SOURCE_ROOT; };
 		34A297022370B8B2007AFC62 /* SOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewController.swift; sourceTree = "<group>"; };
 		34A297052370D543007AFC62 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		34EEE8192375D85A00402084 /* Activites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activites.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				3439D8AD2379D9A60015F814 /* PersonsTableViewController.swift */,
 				3439D8AF2379D9B60015F814 /* PlacesTableViewController.swift */,
 				3439D8BF237B90BE0015F814 /* PlacesDetailViewController.swift */,
+				347379B9237F2C5A00777A01 /* GraphViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			children = (
 				34A297052370D543007AFC62 /* constants.swift */,
 				34EEE8212375FD8E00402084 /* MapAnnotation.swift */,
+				347379B7237F27A800777A01 /* GraphView.swift */,
 			);
 			path = helperFiles;
 			sourceTree = "<group>";
@@ -347,10 +353,12 @@
 				3439D8B02379D9B60015F814 /* PlacesTableViewController.swift in Sources */,
 				3424520A2366155C007D4DCA /* SceneDelegate.swift in Sources */,
 				3439D89E237861F90015F814 /* MedicationsController.swift in Sources */,
+				347379BA237F2C5A00777A01 /* GraphViewController.swift in Sources */,
 				3439D89C237760340015F814 /* DiagnosisTableViewController.swift in Sources */,
 				345F14C42374D60300D08C17 /* EntryDetailViewController.swift in Sources */,
 				3439D8A82379D1860015F814 /* MedicationsTableViewController.swift in Sources */,
 				345F14BE2374D06A00D08C17 /* Journal.swift in Sources */,
+				347379B8237F27A800777A01 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = deltas2k.SafeSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -521,6 +530,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = deltas2k.SafeSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
